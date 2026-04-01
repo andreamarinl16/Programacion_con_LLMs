@@ -1,7 +1,7 @@
 # Proyecto Fase 1 - Introducción a la Inteligencia Artificial
 
 **Nombre:** Andrea Marín López  
-**Correo institucional:** tu_correo_institucional@udea.edu.co  
+**Correo institucional:** andrea.marinl@udea.edu.co  
 
 ## Descripción
 Este repositorio contiene la entrega de la **Fase 1** del proyecto de la materia **Introducción a la Inteligencia Artificial**.

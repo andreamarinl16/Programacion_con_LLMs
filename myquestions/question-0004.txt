@@ -1,0 +1,20 @@
+El Problema:
+
+Dispones de una matriz numérica de observaciones y quieres agruparlas automáticamente en varios grupos usando KMeans. Además de obtener la asignación de cada observación, necesitas una medida de calidad del agrupamiento.
+
+Tu Misión:
+Escribe una función llamada evaluar_clustering_kmeans(X, n_clusters) que realice lo siguiente:
+
+1. Entrene un modelo KMeans de sklearn con n_clusters clusters y random_state=0.
+2. Obtenga las etiquetas de cluster asignadas a cada fila de X.
+3. Obtenga las coordenadas de los centroides del modelo.
+4. Calcule el silhouette_score usando X y las etiquetas predichas.
+5. No reordene las filas de X.
+
+La función debe devolver:
+Una tupla con tres elementos, en este orden:
+1. labels
+2. centroids
+3. score
+
+donde labels es un array de numpy con las etiquetas asignadas, centroids es un array de numpy con los centroides y score es un float correspondiente al silhouette score.

@@ -1,0 +1,16 @@
+El Problema:
+
+Recibes un DataFrame con mediciones periódicas de distintas máquinas industriales. Cada fila contiene el identificador de la máquina, el instante de medición y una variable numérica de interés. Se requiere detectar cambios bruscos entre una medición y la siguiente dentro de cada máquina.
+
+Tu Misión:
+Escribe una función llamada detectar_cambios_percentuales(df, grupo_col, tiempo_col, valor_col, umbral) que realice lo siguiente:
+
+1. Ordene el DataFrame por grupo_col y luego por tiempo_col en orden ascendente.
+2. Para cada grupo definido por grupo_col, calcule el cambio porcentual entre cada valor de valor_col y el valor inmediatamente anterior del mismo grupo.
+3. Guarde ese resultado en una nueva columna llamada cambio_pct.
+4. Filtre únicamente las filas donde el valor absoluto de cambio_pct sea estrictamente mayor que umbral.
+5. Elimine las filas donde cambio_pct sea NaN.
+6. Reinicie el índice del resultado.
+
+La función debe devolver:
+Un DataFrame de pandas con todas las columnas originales más la columna cambio_pct, conteniendo solo las filas que superen el umbral indicado.

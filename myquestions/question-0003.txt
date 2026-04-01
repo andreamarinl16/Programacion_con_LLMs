@@ -1,0 +1,20 @@
+El Problema:
+
+Tienes datos numéricos para un problema de regresión, pero las variables están en escalas muy diferentes. Antes de entrenar un modelo lineal, es necesario escalar correctamente los datos de entrada.
+
+Tu Misión:
+Escribe una función llamada entrenar_regresion_escalada(X_train, y_train, X_test) que realice lo siguiente:
+
+1. Ajuste un StandardScaler usando únicamente X_train.
+2. Transforme X_train y X_test usando ese mismo scaler.
+3. Entrene un modelo LinearRegression de sklearn usando X_train escalado y y_train.
+4. Genere las predicciones sobre X_test escalado.
+5. No modifique y_train.
+
+La función debe devolver:
+Una tupla con tres elementos, en este orden:
+1. X_train_escalado
+2. X_test_escalado
+3. y_pred
+
+donde X_train_escalado y X_test_escalado son arrays de numpy y y_pred es un array de numpy con las predicciones del modelo.

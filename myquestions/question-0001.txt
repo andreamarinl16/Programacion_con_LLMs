@@ -1,0 +1,20 @@
+El Problema:
+
+Una tienda en línea guarda sus transacciones en un DataFrame de pandas. Cada fila representa una venta individual e incluye la fecha de la compra, la categoría del producto y el monto vendido. La empresa necesita un resumen mensual por categoría para analizar el comportamiento de sus ingresos.
+
+Tu Misión:
+Escribe una función llamada resumir_ventas_mensuales(df, fecha_col, categoria_col, monto_col) que realice lo siguiente:
+
+1. Convierta la columna indicada por fecha_col a tipo datetime.
+2. Cree una nueva columna llamada mes con el período mensual correspondiente a cada fecha en formato YYYY-MM.
+3. Agrupe los datos por mes y por la columna indicada en categoria_col.
+4. Calcule para cada grupo:
+   - la suma total de monto_col,
+   - el promedio de monto_col,
+   - y la cantidad de registros.
+5. Ordene el resultado por mes ascendente y luego por categoría ascendente.
+6. Reinicie el índice del DataFrame resultante.
+
+La función debe devolver:
+Un DataFrame de pandas con las columnas:
+mes, categoria_col, suma_monto, promedio_monto y cantidad_registros.

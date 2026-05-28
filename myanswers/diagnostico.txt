@@ -1,0 +1,22 @@
+DIAGNÓSTICO DE SOLUCIONES
+=========================
+
+answer-0372.py: Sin observaciones. La solución replica fielmente la lógica del generador.
+
+answer-0308.py: Sin observaciones. La solución replica fielmente la lógica del generador.
+
+answer-0604.py: Sin observaciones. La solución replica fielmente la lógica del generador.
+
+answer-0194.py: El generador generar_caso_de_uso_deduplicar_pacientes presenta un
+error estructural que impide la validación automática correcta. Específicamente,
+en su línea de retorno (return {"col_id": "paciente_id", "col_fecha":
+"fecha_ingreso", "cols_clinicas": cols}, df) el segundo elemento de la tupla
+es el DataFrame de entrada sin procesar, cuando debería ser el DataFrame
+deduplicado (output esperado). Adicionalmente, el diccionario de inputs no
+incluye la clave "df", por lo que el validador no puede llamar a la función
+con **input_data ni comparar el resultado con un ground truth válido.
+La solución implementada en answer-0194.py sigue fielmente el enunciado:
+calcula score_completitud (línea 10) como el número de valores no nulos en
+cols_clinicas, ordena por col_fecha descendente y score_completitud descendente
+(líneas 14-17), y conserva el primer registro por paciente (líneas 19-20).
+El error es atribuible al generador del compañero, no a la solución entregada.

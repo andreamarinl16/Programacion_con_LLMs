@@ -1,22 +1,29 @@
 DIAGNÓSTICO DE SOLUCIONES
 =========================
 
-answer-0372.py: Sin observaciones. La solución replica fielmente la lógica del generador.
+answer-0372.py: Sin observaciones. La solución replica fielmente la lógica
+del generador y fue validada correctamente por el proceso automático.
 
-answer-0308.py: Sin observaciones. La solución replica fielmente la lógica del generador.
+answer-0604.py: Sin observaciones. La solución replica fielmente la lógica
+del generador y fue validada correctamente por el proceso automático.
 
-answer-0604.py: Sin observaciones. La solución replica fielmente la lógica del generador.
+answer-0308.py: El validador automático reportó un error en la ejecución del
+generador generar_caso_de_uso_diagnosticar_regresion_gbm del compañero
+(usecase generator error: name 'random' is not defined). El generador usa
+el módulo random (por ejemplo en la línea random.randint(50, 120) y
+random.choice([0.2, 0.25, 0.3])) sin incluir la instrucción import random
+al inicio del archivo. Este error es atribuible exclusivamente al generador
+del compañero, no a la solución entregada. La función
+diagnosticar_regresion_gbm implementada en answer-0308.py sigue fielmente
+el enunciado y no presenta errores de ejecución.
 
-answer-0194.py: El generador generar_caso_de_uso_deduplicar_pacientes presenta un
-error estructural que impide la validación automática correcta. Específicamente,
-en su línea de retorno (return {"col_id": "paciente_id", "col_fecha":
-"fecha_ingreso", "cols_clinicas": cols}, df) el segundo elemento de la tupla
-es el DataFrame de entrada sin procesar, cuando debería ser el DataFrame
-deduplicado (output esperado). Adicionalmente, el diccionario de inputs no
-incluye la clave "df", por lo que el validador no puede llamar a la función
-con **input_data ni comparar el resultado con un ground truth válido.
-La solución implementada en answer-0194.py sigue fielmente el enunciado:
-calcula score_completitud (línea 10) como el número de valores no nulos en
-cols_clinicas, ordena por col_fecha descendente y score_completitud descendente
-(líneas 14-17), y conserva el primer registro por paciente (líneas 19-20).
-El error es atribuible al generador del compañero, no a la solución entregada.
+answer-0194.py: El validador automático reportó un error en la ejecución del
+generador generar_caso_de_uso_deduplicar_pacientes del compañero (usecase
+generator error: deduplicar_pacientes() missing 4 required positional
+arguments: 'df', 'col_id', 'col_fecha', and 'cols_clinicas'). El generador
+retorna como tupla un diccionario que no incluye la clave 'df' y el DataFrame
+de entrada sin procesar como segundo elemento, cuando debería ser el resultado
+deduplicado. Al intentar llamar la función con **input_data, el argumento 'df'
+no está presente, causando el error. Este error es atribuible exclusivamente
+al generador del compañero. La función deduplicar_pacientes implementada en
+answer-0194.py sigue fielmente el enunciado y no presenta errores de ejecución.
